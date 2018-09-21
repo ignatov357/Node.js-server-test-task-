@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "database-setup": "node ./bin/database-setup",
+    "start": "node ./bin/start"
   },
   "dependencies": {
     "express": "~4.16.0",

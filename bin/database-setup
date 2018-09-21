@@ -1,0 +1,18 @@
+const db = require('../helpers/db')();
+const fs = require('fs');
+const path = require('path');
+
+fs.readFile(path.join(__dirname, 'dump.sql'), 'utf-8', (error, contents) => {
+    if(!error) {
+        db.query(contents, (error) => {
+            if(!error) {
+                console.log('All the tables have been successfully imported.');
+                db.end();
+            } else {
+                console.log(error);
+            }
+        });
+    } else {
+        console.log(error);
+    }
+});

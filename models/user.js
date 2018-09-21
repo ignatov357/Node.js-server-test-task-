@@ -1,8 +1,5 @@
 if (typeof db === 'undefined') {
-    db = require('../helpers/db')((error) => {
-        console.error(error);
-        process.exit();
-    });
+    db = require('../helpers/db')();
 }
 const utils = require('../helpers/utils');
 
