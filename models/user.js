@@ -31,7 +31,7 @@ const create = function (userData, callback) {
         callback('required_params_are_missed', null);
     }
 };
-let getIdByCredentials = function (credentials, callback) {
+const getIdByCredentials = function (credentials, callback) {
     if (utils.checkObject(credentials, ['email', 'password'], function (value) {
         return value.length > 0;
     })) {
@@ -68,4 +68,8 @@ const getById = function (id, callback) {
     }
 };
 
-module.exports = {create, getIdByCredentials, getById};
+module.exports = {
+    create,
+    getIdByCredentials,
+    getById
+};
